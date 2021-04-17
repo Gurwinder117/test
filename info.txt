@@ -1,0 +1,9 @@
+C:\Users\Owner\Downloads\jdk-15.0.2_windows-x64_bin\jdk-15.0.2;C:\Users\Owner\Dev\Tools\Maven\apache-maven-3.8.1-bin\apache-maven-3.8.1
+
+mvn -version
+java -version
+mvn test
+mvn compile
+.class file will be created under target folder
+
+C:\Users\Owner\Downloads\jdk-15.0.2_windows-x64_bin\;C:\Users\Owner\Dev\Tools\Maven\apache-maven-3.8.1-bin;

@@ -1,0 +1,57 @@
+package FirstMaven.FirstMaven;
+
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
+
+public class Herukuapp {
+	WebDriver driver;
+	@BeforeTest
+	public void Launch()
+	{
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Owner\\Downloads\\chromedriver_win32\\chromedriver.exe");
+		 driver = new ChromeDriver();	
+		
+		driver.get("https://the-internet.herokuapp.com/login");
+	String actualresult=driver.getTitle();
+	String expectedresult="The Internet";
+	Assert.assertEquals(actualresult, expectedresult,"Title Verification");
+	}
+	@Test
+public void Test()
+{
+	
+
+driver.findElement(By.id("username")).sendKeys("tomsmith");
+driver.findElement(By.id("password")).sendKeys("SuperSecretPassword!");
+driver.findElement(By.xpath("//*[@id='login']/button")).click();
+
+
+//verify url after login
+String actualurl=driver.getCurrentUrl();
+String expectedurl="Thttps://the-internet.herokuapp.com/secure";
+Assert.assertEquals(actualurl, expectedurl);
+
+//verify logout button is visibile or not
+WebElement we=driver.findElement(By.linkText("Logout"));
+Assert.assertTrue(we.isDisplayed());
+
+//Verify successfull logout message
+//inspect logout message and has id flash
+driver.findElement(By.id("flash")).isDisplayed();
+
+
+
+
+}
+	@AfterTest()
+	public void CloseBrowser()
+	{
+		driver.close();
+	}
+}

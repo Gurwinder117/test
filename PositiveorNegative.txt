@@ -1,0 +1,21 @@
+package firstproject;
+import java.util.Scanner;
+
+public class NegorPos {
+	public static void main(String args[])
+	{
+Scanner in=new Scanner(System.in);
+System.out.println("Enter number");
+
+
+int input= in.nextInt();
+if(input>0)
+{
+	System.out.println("Negative number");
+}
+else {
+	System.out.println("Positive number");
+	
+}
+}
+}
